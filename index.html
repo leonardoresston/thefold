@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fold &mdash; 28 June 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5f3ee;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  .header {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 28px 36px 22px;
+    text-align: center;
+  }
+  .header .weather-bar {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+  .header .tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+  }
+  .header .dateline {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+  }
+  .section-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    padding: 22px 36px 12px;
+    border-bottom: 1px solid #e0ddd6;
+  }
+  .lead {
+    padding: 32px 36px 28px;
+  }
+  .lead h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+  }
+  .lead p {
+    margin-bottom: 16px;
+    color: #333;
+    font-size: 16px;
+  }
+  .lead .sources {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+  .pull-quote {
+    border-left: 4px solid #1a1a1a;
+    margin: 24px 36px;
+    padding: 14px 20px;
+    background: #f9f8f5;
+  }
+  .pull-quote p {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  .pull-quote cite {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #888;
+    font-style: normal;
+  }
+  .section {
+    padding: 28px 36px;
+    border-top: 1px solid #e0ddd6;
+  }
+  .section h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .section p {
+    margin-bottom: 14px;
+    color: #333;
+    font-size: 16px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+  .section .sources {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    color: #888;
+    font-style: italic;
+  }
+  .section-heading {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 10px 36px;
+    margin: 0;
+  }
+  .sport-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .sport-table th {
+    text-align: left;
+    padding: 7px 10px;
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  .sport-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+  }
+  .sport-table tr:nth-child(even) td { background: #f9f8f5; }
+  .sport-table tr.highlight td { background: #fff8e1; font-weight: 600; }
+  .stream-pick {
+    background: #f9f8f5;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .stream-pick .platform {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .stream-pick .title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .stream-pick .desc {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+  }
+  .markets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .market-item {
+    background: #f9f8f5;
+    border: 1px solid #e0ddd6;
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .market-item .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .market-item .value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .market-item .sub {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+  }
+  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 32px 36px;
+  }
+  .footer h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .footer p {
+    font-size: 13px;
+    color: #888;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 30px; }
+    .lead h2 { font-size: 22px; }
+    .markets-grid { grid-template-columns: repeat(2, 1fr); }
+    .wrapper { border: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="weather-bar">LONDON &middot; SUNDAY &middot; 28 JUNE 2026 &middot; UPDATED RSS EDITION</div>
+    <h1>The Fold</h1>
+    <div class="tagline">Your Morning Briefing from the UK &amp; the World</div>
+    <div class="dateline">28/06/26 &middot; 6:00 BST &middot; Guardian, BBC, Folha, Meio, Verge, MacMagazine &amp; MacStories</div>
+  </div>
+
+  <div class="section-label">LEAD STORY</div>
+
+  <div class="lead">
+    <h2>The day divided into two crises: the world outside, and the institutions trying to explain it</h2>
+
+    <p>The expanded feed list changes the shape of the issue. With BBC World and Folha Poder now sitting beside the Guardian, Canal Meio and the Apple-tech feeds, Saturday's biggest pattern is no longer just one story. It is a split screen: war and disaster abroad, political exhaustion at home, and technology companies turning infrastructure pressure into consumer cost. BBC and the Guardian both led with the fragile US-Iran ceasefire and the Venezuela earthquake aftermath. The first is a conflict that keeps returning to force even while diplomacy claims to be alive; the second is a humanitarian emergency where families are still calling into rubble. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/cdxdwkgqgq0o?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.bbc.co.uk/news/articles/cp8l451420zo?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.theguardian.com/us-news/2026/jun/27/us-iran-strikes">The Guardian</a>)</span></p>
+
+    <p>The domestic line is just as sharp. Guardian opinion says Labour has abandoned the missions that gave it purpose, while the same feed asks whether Andy Burnham can revive state-led ambition. Folha and Canal Meio show Brazil's right splitting across family, party and institutional lines: Michelle Bolsonaro's public rupture, Flavio Bolsonaro's Senate absences, and rival conservative candidacies in Roraima. The Verge and BBC add the economic undertone: AI and memory demand are pushing device prices up, while Apple seeks permission to buy from a blacklisted Chinese supplier. The common connection is institutional strain. Governments, parties and companies are all asking publics to trust systems that look less stable than the promises attached to them. <span class="sources">(<a href="https://www.theguardian.com/commentisfree/2026/jun/28/labour-keir-starmer-government-five-missions-failed-andy-burnham-mariana-mazzucato">The Guardian</a>, <a href="https://www.canalmeio.com.br/2026/06/27/michelle-bolsonaro-descontrolada/">Canal Meio</a>, <a href="https://www.theverge.com/tech/958707/apple-ram-buy-memory-blacklisted-china-cxmt">The Verge</a>, <a href="https://www.bbc.co.uk/news/articles/cd95k584pzqo?at_medium=RSS&amp;at_campaign=rss">BBC World</a>)</span></p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"The feeds were not pointing at one headline. They were pointing at the same condition: institutions promising control while the ground shifts underneath them."</p>
+    <cite>&mdash; The Fold, on the expanded RSS mix</cite>
+  </div>
+
+  <div class="section-heading">UK &amp; WORLD POLITICS</div>
+
+  <div class="section">
+    <h3>US-Iran ceasefire holds only in the language of diplomacy</h3>
+    <p>BBC World and the Guardian both carried the renewed exchange of strikes between Washington and Tehran, with each side accusing the other of violating the ceasefire. That is the key: the ceasefire has become less a settled fact than a disputed frame around continuing force. For Britain, the practical concern is not only escalation. It is how long foreign policy can operate in this grey zone where shipping, energy prices, military deployments and domestic political arguments all respond to a conflict that is neither fully paused nor openly expanding. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/cdxdwkgqgq0o?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.theguardian.com/us-news/2026/jun/27/us-iran-strikes">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Venezuela quake response becomes a test of state capacity</h3>
+    <p>BBC World led with families calling for loved ones trapped in the rubble after Venezuela's twin earthquakes, while the Guardian reported the death toll rising above 1,400. The story's importance lies in the days after the shock: search logistics, hospital capacity, water, shelter and aid coordination will now determine how much worse the disaster becomes. MacMagazine's earlier note that Apple would donate to Venezuela sits in the background as a reminder that major companies increasingly appear in disaster response not only as donors, but as public actors expected to make visible gestures of responsibility. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/cp8l451420zo?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.theguardian.com/world/2026/jun/27/venezuela-earthquakes-death-toll-rises-jorge-rodriguez">The Guardian</a>, <a href="https://macmagazine.com.br/post/2026/06/26/apple-fara-doacao-a-venezuela-apos-terremotos-devastadores-no-pais/">MacMagazine</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Labour's mission problem becomes the Burnham question</h3>
+    <p>Mariana Mazzucato's Guardian column argued that Labour has drifted away from the missions that helped bring it to power, and framed Andy Burnham as a possible route back to more ambitious state action. The point lands because the feed is full of system failures: disaster response, housing pressure, platform regulation, climate heat and geopolitical uncertainty. A government that cannot explain its theory of change looks smaller in that environment. Burnham's appeal, in the Guardian framing, is not just personal popularity. It is that he still speaks in the language of state capacity. <span class="sources">(<a href="https://www.theguardian.com/commentisfree/2026/jun/28/labour-keir-starmer-government-five-missions-failed-andy-burnham-mariana-mazzucato">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Harry, Meghan and the politics of returning to Britain</h3>
+    <p>BBC World reported that Prince Harry is reconsidering bringing Meghan and the children on a UK trip. In a heavier news day, this is not the lead, but it is still revealing. The monarchy story now often functions as a proxy argument about security, family fracture, media trust and the boundaries between private life and public office. It also sits beside Guardian comment on royal tax secrecy from earlier in the feed: the royal family remains a constitutional institution that is constantly discussed through the grammar of celebrity. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/c4gy6ywg73wo?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.theguardian.com/commentisfree/2026/jun/26/the-guardian-view-on-royal-tax-secrecy-it-survives-king-charless-latest-disclosure">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section-heading">BRAZIL &amp; POWER</div>
+
+  <div class="section">
+    <h3>Brazil's right is splitting in more than one direction</h3>
+    <p>The new Folha feed makes the Brazil picture sharper. Folha reported Republicanos and PL backing rival candidates in Roraima, while Canal Meio focused on Michelle Bolsonaro's public rebellion inside the Bolsonaro clan. Folha also carried a piece on Flavio Bolsonaro missing a large share of nominal Senate votes this year. Taken together, the stories describe a right wing that is not simply waiting for one successor. It is testing family loyalty, party machinery, regional alliances and candidate discipline all at once. The Bolsonaro brand remains powerful, but the mechanisms around it look less tidy. <span class="sources">(<a href="https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/06/republicanos-e-pl-apoiam-candidatos-rivais-em-roraima-e-dividem-a-direita.shtml">Folha Poder</a>, <a href="https://www.canalmeio.com.br/2026/06/27/michelle-bolsonaro-descontrolada/">Canal Meio</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Rio's legislature becomes a symbol of institutional rot</h3>
+    <p>Folha's item on the Alerj crisis described the Rio de Janeiro assembly as sitting at the centre of scandals and local celebrity politics. Another Folha story connected Rio pension-fund questions to Banco Master investments, while a column said federal police involvement could change the Lojas Americanas case. The details differ, but the through-line is familiar in Brazilian politics: formal institutions that should produce accountability instead become theatres where finance, influence and spectacle overlap. It is the Brazil version of the issue's broader theme: rules exist, but enforcement is where power reveals itself. <span class="sources">(<a href="https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/06/no-centro-da-crise-do-rio-alerj-tem-sede-asseptica-recheada-de-escandalos-e-subcelebridades.shtml">Folha Poder</a>, <a href="https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/colunas/eliogaspari/2026/06/entrada-da-pf-pode-mudar-o-jogo-no-caso-lojas-americanas.shtml">Folha Poder</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Lula, the PT and the harder politics of coalition maintenance</h3>
+    <p>Folha's feed included items on Lula facing one of the hardest conversations of his long political life and on disagreements inside the PT over campaign-fund distribution. These are not isolated process stories. They describe the maintenance work of power: deciding who gets resources, who gets protection, who carries blame and who is allowed to speak for the coalition. In the same feed, Michelle and Flavio Bolsonaro show the right struggling with succession; on the left, the machinery is about keeping a governing camp aligned under pressure. <span class="sources">(<a href="https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/colunas/eliogaspari/2026/06/lula-teve-uma-das-conversas-mais-dificeis-de-seus-80-anos.shtml">Folha Poder</a>, <a href="https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/06/divisao-de-fundo-eleitoral-para-campanha-causa-divergencia-no-pt.shtml">Folha Poder</a>)</span></p>
+  </div>
+
+  <div class="section-heading">TECHNOLOGY &amp; APPLE</div>
+
+  <div class="section">
+    <h3>AI's cost is moving into the price tag</h3>
+    <p>The technology feeds were unusually coherent. BBC World asked why tech firms are blaming AI for device and console price rises. The Verge reported that Apple wants permission to buy memory from CXMT, a Chinese supplier blacklisted by the Pentagon. MacStories' earlier item on Apple raising prices across much of its product line, and MacMagazine's reporting on memory pressure, fill in the context. AI is no longer only a software story or a data-centre story. It is becoming a bill of materials story, a supply-chain story and eventually a consumer-affordability story. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/cd95k584pzqo?at_medium=RSS&amp;at_campaign=rss">BBC World</a>, <a href="https://www.theverge.com/tech/958707/apple-ram-buy-memory-blacklisted-china-cxmt">The Verge</a>, <a href="https://www.macstories.net/news/apple-raises-prices-across-most-of-its-product-lines/">MacStories</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Margaret Atwood gives AI the shortest useful test</h3>
+    <p>The Verge's interview note with Margaret Atwood cut through the usual grand claims about AI. Her argument, in essence, is that the output problem begins with the input problem. That links neatly to the hardware-price story. Companies can add memory, models and interfaces, but if the underlying material is weak, derivative or poorly governed, the result is still disappointing. In a feed where firms are already preparing users for higher prices, quality and trust become more important than novelty. <span class="sources">(<a href="https://www.theverge.com/ai-artificial-intelligence/958715/margaret-atwood-ai-problem-garbage-in-garbage-out">The Verge</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>The practical Apple layer: iCloud, CarPlay and the tools people actually touch</h3>
+    <p>MacMagazine's Saturday feed was mostly practical: sorting iCloud files, previewing files, pinning Notes, emptying Mail spam and making Apple devices play a sound through iCloud.com. It also reviewed a display that brings CarPlay to motorcycles. That material may look smaller than supply-chain politics, but it matters to the newsletter's balance. The industry talks about AI, memory, chips and price rises; users still need to find files, clean mailboxes and make devices behave. The distance between those two layers is where frustration grows. <span class="sources">(<a href="https://macmagazine.com.br/post/2026/06/27/como-alterar-a-ordenacao-e-a-visualizacao-de-arquivos-no-icloud-com/">MacMagazine</a>, <a href="https://macmagazine.com.br/post/2026/06/27/review-conheca-o-cpmc-x6-display-que-leva-o-carplay-para-a-sua-moto/">MacMagazine</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Smart gadgets continue solving expensive versions of ordinary problems</h3>
+    <p>The Verge reviewed a keyless bike lock and framed it as a pricey answer to a cheaper problem. That is a useful punctuation mark after the AI-price discussion. Not every connected object needs to become a premium technology stack. The same issue appears across consumer tech: a product can be clever, but if the added intelligence creates new cost, charging and failure points, the value case has to be much stronger than "it has an app." <span class="sources">(<a href="https://www.theverge.com/tech/957603/tmd-smart-keyless-bike-lock-review">The Verge</a>)</span></p>
+  </div>
+
+  <div class="section-heading">SPORT</div>
+
+  <div class="section">
+    <h3>England are through, but the feeds are not convinced</h3>
+    <p>BBC and Guardian Football both framed England's World Cup progress with caution. The knockout path is now visible, with DR Congo next, but the tone around the Panama win was not triumphalist. BBC's angle was straightforward: England topped the group but will not win the tournament unless they improve. Guardian Football focused on Jude Bellingham bending the game to his will and on concerns around a creaky defence and Declan Rice's form. The result is fine; the performance remains a warning label. <span class="sources">(<a href="https://www.bbc.co.uk/sport/football/articles/c5yz0zkzw39o?at_medium=RSS&amp;at_campaign=rss">BBC Sport</a>, <a href="https://www.bbc.co.uk/sport/football/articles/cg4wnp592z1o?at_medium=RSS&amp;at_campaign=rss">BBC Sport</a>, <a href="https://www.theguardian.com/football/2026/jun/28/jude-bellingham-england-panama-world-cup">The Guardian</a>)</span></p>
+
+    <table class="sport-table">
+      <thead><tr><th>THREAD</th><th>WHAT IT MEANS</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>England</td><td>Top of group; DR Congo next in the last 32</td></tr>
+        <tr><td>Bellingham</td><td>Still the player most able to tilt a flat game</td></tr>
+        <tr><td>Defence</td><td>Guardian and BBC both flag performance concerns</td></tr>
+        <tr><td>Tournament</td><td>Knockout stage begins with favourites still unclear</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>Messi, Austria, Algeria and the World Cup's emotional sorting machine</h3>
+    <p>Guardian Football's broader World Cup feed had Lionel Messi scoring from the bench for Argentina, late drama sending Austria and Algeria through, and Iran suffering at the edge of qualification. That is the tournament at its best: established stars, marginal nations, and the cruelty of groups decided by minutes. The BBC's list of group-stage moments made the same point from a different angle. The World Cup is now shifting from accumulation to elimination, and the stories will get cleaner, harsher and more memorable from here. <span class="sources">(<a href="https://www.theguardian.com/football/2026/jun/28/argentian-jordan-world-cup-group-j-match-report">The Guardian</a>, <a href="https://www.theguardian.com/football/2026/jun/28/algeria-austria-world-cup-group-j-match-report">The Guardian</a>, <a href="https://www.bbc.co.uk/sport/football/articles/ce3e256752qo?at_medium=RSS&amp;at_campaign=rss">BBC Sport</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Scotland's managerial ending brings relief as well as gratitude</h3>
+    <p>BBC's Scotland item said Steve Clarke leaves a strong legacy but that his exit also brings a sense of relief. That phrasing is honest about football cycles. A manager can improve a national team, reshape expectations and still reach the point where continuity becomes heaviness. In the same live World Cup feed that had England looking ahead and South Korea's president criticising his team, Clarke's exit is part of a broader tournament truth: national football turns quickly from pride to judgement. <span class="sources">(<a href="https://www.bbc.co.uk/sport/football/articles/cn4d1eg5eqeo?at_medium=RSS&amp;at_campaign=rss">BBC Sport</a>, <a href="https://www.theguardian.com/football/live/2026/jun/28/world-cup-2026-england-win-clarke-quits-scotland-and-iran-denied-at-the-last-live">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section-heading">CULTURE &amp; LIFE</div>
+
+  <div class="section">
+    <h3>Culture had the issue's best tonal range</h3>
+
+    <div class="stream-pick">
+      <div class="platform">GUARDIAN CULTURE</div>
+      <div class="title">Mel Brooks reaches 100</div>
+      <div class="desc">A centenary piece that treats longevity not as nostalgia alone, but as a chance to look at comedy's durability and changing permissions.</div>
+    </div>
+
+    <div class="stream-pick">
+      <div class="platform">GUARDIAN BOOKS</div>
+      <div class="title">David Sedaris versus Duolingo</div>
+      <div class="desc">A small, comic obsession story: language streaks, walking, self-discipline and the absurd pressure of gamified self-improvement.</div>
+    </div>
+
+    <div class="stream-pick">
+      <div class="platform">GUARDIAN FILM</div>
+      <div class="title">The psychiatrist afraid of horror</div>
+      <div class="desc">A culture essay about fear, "cinematic neurosis" and why some viewers experience horror not as fun but as something closer to bodily threat.</div>
+    </div>
+
+    <div class="stream-pick">
+      <div class="platform">GUARDIAN CULTURE</div>
+      <div class="title">Eddie Marsan's honest playlist</div>
+      <div class="desc">The actor's choices produce one of the warmer pieces in the feed: funk, praise, memory and taste as a compressed autobiography.</div>
+    </div>
+
+    <p style="margin-top:14px;">The lighter section still connects to the issue's main line. These are stories about the systems people use to organise themselves: playlists, language apps, genre fears, comedy histories, restaurant rituals and advice columns. The public world is about institutions straining; the culture feed is about private routines trying to hold. <span class="sources">(<a href="https://www.theguardian.com/film/2026/jun/28/mel-brooks-at-100">The Guardian</a>, <a href="https://www.theguardian.com/books/2026/jun/28/david-sedaris-duolingo-obsession-the-land-and-its-people-memoir">The Guardian</a>, <a href="https://www.theguardian.com/film/2026/jun/28/why-some-people-hate-horror-films-psychiatrist-cinematic-neurosis">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section">
+    <h3>Life advice and the cost of intimacy</h3>
+    <p>The Guardian life-and-style feed offered two pieces that belong beside the politics rather than after it: one about a parent wishing an adult son wanted more contact, and another about couples who have emotionally separated but cannot afford to move out. The housing story in particular is not lifestyle fluff. It shows economic pressure turning into domestic architecture. People can end a relationship emotionally while remaining trapped in its rooms. That is policy arriving at the dinner table. <span class="sources">(<a href="https://www.theguardian.com/lifeandstyle/2026/jun/28/wish-son-wanted-spend-more-time-with-me-annalisa-barbieri">The Guardian</a>, <a href="https://www.theguardian.com/lifeandstyle/2026/jun/28/love-gone-but-costs-too-much-to-move-out-ntwnfb">The Guardian</a>)</span></p>
+  </div>
+
+  <div class="section-heading">FEED MAP</div>
+
+  <div class="section">
+    <div class="markets-grid">
+      <div class="market-item">
+        <div class="label">World</div>
+        <div class="value">BBC + Guardian</div>
+        <div class="sub">Iran, Venezuela, monarchy, geopolitics</div>
+      </div>
+      <div class="market-item">
+        <div class="label">Brazil</div>
+        <div class="value">Folha + Meio</div>
+        <div class="sub">Bolsonaro family, Alerj, PT machinery</div>
+      </div>
+      <div class="market-item">
+        <div class="label">Tech</div>
+        <div class="value">Verge + Mac feeds</div>
+        <div class="sub">AI prices, memory, Apple practical layer</div>
+      </div>
+      <div class="market-item">
+        <div class="label">Culture/Sport</div>
+        <div class="value">Guardian sections</div>
+        <div class="sub">World Cup, Brooks, Sedaris, life advice</div>
+      </div>
+    </div>
+
+    <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #888; margin-bottom: 14px; margin-top:8px;">Built from the updated OPML: Guardian UK, Guardian Football, Guardian Culture, Guardian Life and Style, Guardian Comment is Free, BBC World, Folha Poder, Canal Meio, The Verge, MacMagazine and MacStories.</p>
+
+    <p>The expanded feed list makes the edition more balanced. BBC gives the hard-news spine. Guardian sections provide politics, sport and culture. Folha and Canal Meio give Brazil a real political lane rather than a single item. The Verge and Mac feeds keep technology grounded in cost, supply and practical use. The result is closer to the intended Fold format: fewer isolated headlines, more connective tissue across politics, daily life, technology and culture. <span class="sources">(The Fold synthesis from the updated RSS list)</span></p>
+  </div>
+
+  <div class="footer">
+    <h2>The Fold</h2>
+    <p>A daily newsletter for Londoners who want<br>the full picture, not just the headline.</p>
+    <br>
+    <p style="font-size: 11px; color: #666;">Inspired by Brazil's Meio &middot; Built with Codex &middot; Sunday, 28 June 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
