@@ -1,0 +1,60 @@
+{
+  "timezone": "Europe/London",
+  "feeds": [
+    {
+      "name": "The Guardian UK",
+      "category": "uk",
+      "url": "https://www.theguardian.com/uk/rss"
+    },
+    {
+      "name": "The Guardian Football",
+      "category": "sport",
+      "url": "https://www.theguardian.com/football/rss"
+    },
+    {
+      "name": "The Guardian Culture",
+      "category": "culture",
+      "url": "https://www.theguardian.com/uk/culture/rss"
+    },
+    {
+      "name": "The Guardian Life and Style",
+      "category": "life",
+      "url": "https://www.theguardian.com/uk/lifeandstyle/rss"
+    },
+    {
+      "name": "The Guardian Comment is Free",
+      "category": "comment",
+      "url": "https://www.theguardian.com/uk/commentisfree/rss"
+    },
+    {
+      "name": "BBC World",
+      "category": "world",
+      "url": "http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml"
+    },
+    {
+      "name": "Folha Poder",
+      "category": "brazil",
+      "url": "http://feeds.folha.uol.com.br/poder/rss091.xml"
+    },
+    {
+      "name": "Canal Meio",
+      "category": "brazil",
+      "url": "http://www.canalmeio.com.br/feed/"
+    },
+    {
+      "name": "MacMagazine",
+      "category": "technology",
+      "url": "http://macmagazine.com.br/feed/"
+    },
+    {
+      "name": "The Verge",
+      "category": "technology",
+      "url": "https://www.theverge.com/rss/full.xml"
+    },
+    {
+      "name": "MacStories",
+      "category": "technology",
+      "url": "https://www.macstories.net/feed/"
+    }
+  ]
+}
