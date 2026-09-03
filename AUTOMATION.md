@@ -1,16 +1,22 @@
 # The Fold Automation Notes
 
-## Readwise Reader
+## Edition output
 
-Save only one Reader document per edition.
+- Follow `EDITORIAL_STYLE.md`, including the approximately 3,000-word target, looser conversational flow, and Matter-compatible semantic HTML.
+- Do not fetch or publish the former BTC-GBP, BRL-GBP, or VWRP market snapshot.
+- Publish the same final HTML to both `index.html` and the permanent dated archive path.
+
+## Matter
+
+Save exactly one Matter item per edition using the installed CLI at `/Users/leonardoresston/.matter/bin/matter`.
 
 - Use the permanent archive URL: `https://leonardoresston.github.io/thefold/archive/YYYY/MM-DD.html`.
 - Do not save the front page URL for daily editions.
-- Save as category `article` and apply the `rss` tag. Do not try category `rss` first.
-- Before creating a Reader document, list recent documents without a tag filter and compare `source_url` and `url` against the permanent archive URL. Reader can create untagged scraper documents.
-- Also search Reader by the exact title `The Fold — YYYY-MM-DD`.
-- Reuse an existing Reader document when its `source_url`, `url`, or exact title already matches the current edition.
-- If an existing document lacks the standard title, author, category, published date, or tags, normalize it with `reader_bulk_edit_document_metadata` instead of creating another document.
-- Call `reader_create_document` at most once per run.
-- After creation, list the returned Reader document by ID and repair missing metadata or tags with `reader_bulk_edit_document_metadata`.
-- If Reader creation returns an error, list recent Reader documents and search by exact title again before retrying. Reader can create a document even when the connector returns an error.
+- Before saving, run `matter account` and stop if authentication, Matter Pro access, or write access is unavailable.
+- List all Matter items with `matter items list --status all --all` and compare their URL fields against the exact permanent archive URL.
+- Also search Matter for the exact title `The Fold — YYYY-MM-DD`; compare any result's URL against the permanent archive URL.
+- Reuse an existing item whenever its URL matches. Never save a second copy of the same permanent archive URL.
+- If no match exists, call `matter items save --url "PERMANENT_ARCHIVE_URL" --status queue` exactly once and capture the returned item ID.
+- Apply these tags to the saved or reused item with `matter tags add --item ITEM_ID --name "TAG"`: `The Fold`, `newsletter`, `rss`, `daily-briefing`, and `github-pages`. Adding an existing tag is acceptable.
+- After saving, fetch the returned item with `matter items get ITEM_ID` and confirm that its URL matches the permanent archive URL.
+- If `matter items save` returns an error, do not immediately retry. Repeat the all-items URL check and exact-title search first; save again only if both checks confirm that no matching item exists.

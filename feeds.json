@@ -55,6 +55,16 @@
       "name": "MacStories",
       "category": "technology",
       "url": "https://www.macstories.net/feed/"
+    },
+    {
+      "name": "9to5Mac",
+      "category": "technology",
+      "url": "http://9to5mac.com/feed/"
+    },
+    {
+      "name": "IGN Games",
+      "category": "gaming",
+      "url": "http://feeds.ign.com/ign/games-all"
     }
   ]
 }
