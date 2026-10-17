@@ -6,6 +6,16 @@
 - Do not fetch or publish the former BTC-GBP, BRL-GBP, or VWRP market snapshot.
 - Publish the same final HTML to both `index.html` and the permanent dated archive path.
 
+## Template and checks
+
+- Build every edition from `TEMPLATE.html`. This replaces any instruction to use `index.html` or older archives as the visual template: those pages are previous outputs, and archives before 17 October 2026 use the retired design.
+- Copy the template's `<head>` font links and `<style>` block exactly, keep `<meta name="fold-template" content="2026-10">`, and replace every `{{PLACEHOLDER}}`.
+- Keep the `<title>` and `og:title` exactly `The Fold — YYYY-MM-DD`; the Matter de-duplication below searches for that title.
+- After writing both files and before committing, run `python3 scripts/check_edition.py index.html`.
+  - Any `ERROR` blocks publication: fix the edition and run the check again.
+  - Review each `WARNING` (word count, contrast formulas, meta-comments, attribution scaffolding) and rewrite the flagged sentence unless it is a false positive.
+- Include the checker's final summary line in the run report.
+
 ## Matter
 
 Save exactly one Matter item per edition using the installed CLI at `/Users/leonardoresston/.matter/bin/matter`.

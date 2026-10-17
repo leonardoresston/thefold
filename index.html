@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="fold-template" content="2026-10">
 <title>The Fold &mdash; 2026-10-17</title>
 <meta name="author" content="The Fold">
 <meta name="publication_date" content="2026-10-17">
 <meta name="description" content="The Fold morning briefing for 17 October 2026: Amazon clearance reaches a record low before Brazil votes, London debates robotaxis, Britain weighs its place in European carmaking, and Australia tries to give users control of their feeds.">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="The Fold">
 <meta property="og:title" content="The Fold — 2026-10-17">
 <meta property="og:description" content="Amazon clearance reaches a record low before Brazil votes, London debates robotaxis, Britain weighs its place in European carmaking, and Australia tries to give users control of their feeds.">
 <meta property="og:url" content="https://leonardoresston.github.io/thefold/archive/2026/10-17.html">
@@ -15,46 +17,72 @@
 <meta property="article:author" content="The Fold">
 <meta property="article:published_time" content="2026-10-17T05:30:00+01:00">
 <link rel="canonical" href="https://leonardoresston.github.io/thefold/archive/2026/10-17.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;display=swap" rel="stylesheet">
 <style>
+  :root { --paper: #FBF8F3; --paper-2: #F3EEE5; --ink: #171614; --ink-2: #3B3833; --muted: #736D65; --rule: #E3DCD1; --accent: #9C2A22; --serif: "Newsreader", "Iowan Old Style", Georgia, serif; --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root { --paper: #141312; --paper-2: #1D1C1A; --ink: #EEE9E1; --ink-2: #CFC9BF; --muted: #9A938A; --rule: #33302C; --accent: #E07A68; } }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; background: #f5f3ee; color: #1a1a1a; font-size: 16px; line-height: 1.72; }
-  .wrapper { max-width: 700px; margin: 0 auto; background: #fff; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
-  .header { background: #1a1a1a; color: #fff; padding: 30px 38px 24px; text-align: center; }
-  .weather-bar { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
-  .header h1 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 42px; font-weight: 800; letter-spacing: -1px; color: #fff; margin-bottom: 6px; }
-  .tagline { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 6px; }
-  .dateline { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #777; }
-  .lead { padding: 34px 38px 30px; }
-  .lead h3 { font-size: 29px; line-height: 1.24; margin-bottom: 20px; }
-  .story { padding: 27px 38px; border-top: 1px solid #e0ddd6; }
-  .story h3 { font-size: 21px; line-height: 1.3; margin-bottom: 13px; }
-  .lead p, .story p { color: #333; margin-bottom: 15px; }
-  .lead p:last-child, .story p:last-child { margin-bottom: 0; }
-  figure { margin: 0 0 22px; }
-  figure img { display: block; width: 100%; height: auto; }
-  figcaption { margin-top: 7px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10.5px; line-height: 1.45; color: #777; }
-  .section-heading { background: #1a1a1a; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 10px 38px; }
-  .sources { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11.5px; color: #888; font-style: italic; white-space: normal; }
-  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
-  .footer { background: #1a1a1a; color: #fff; text-align: center; padding: 32px 38px; }
-  .footer strong { display: block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 28px; margin-bottom: 8px; }
-  .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #888; line-height: 1.6; }
-  @media (max-width: 600px) { .wrapper { border: 0; } .header, .lead, .story, .footer { padding-left: 24px; padding-right: 24px; } .section-heading { padding-left: 24px; } .header h1 { font-size: 32px; } .lead h3 { font-size: 24px; } }
+  body { background: var(--paper); color: var(--ink); font: 19px/1.62 var(--serif); font-optical-sizing: auto; -webkit-font-smoothing: antialiased; padding: 0 22px; }
+  main { max-width: 660px; margin: 0 auto; }
+  a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  h1, h2, h3 { font-weight: 500; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .masthead { text-align: center; padding: 40px 0 22px; border-bottom: 1px solid var(--ink); }
+  .masthead .date { font: 500 11.5px/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .masthead h1 { font-size: 72px; font-weight: 560; line-height: 1; letter-spacing: -0.035em; margin: 12px 0 10px; font-variation-settings: "opsz" 72; }
+  .masthead h1 .the { font-weight: 300; font-style: italic; font-size: .5em; vertical-align: .62em; letter-spacing: -0.01em; margin-right: -0.14em; }
+  .masthead .tagline { font-style: italic; color: var(--ink-2); font-size: 18px; }
+  .in-brief { margin: 30px 0 0; padding: 18px 22px 10px; background: var(--paper-2); border-radius: 3px; }
+  .in-brief .label { font: 600 11.5px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .in-brief ul { list-style: none; }
+  .in-brief li { position: relative; padding: 10px 0 10px 20px; border-top: 1px solid var(--rule); font-size: 17px; line-height: 1.45; }
+  .in-brief li:first-child { border-top: 0; }
+  .in-brief li::before { content: ""; position: absolute; left: 1px; top: 1.05em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  article h2 { font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; margin: 60px 0 0; padding-top: 14px; border-top: 2px solid var(--ink); }
+  .story { margin-top: 34px; }
+  .story h3 { font-size: 25px; line-height: 1.18; letter-spacing: -0.012em; margin-bottom: 14px; }
+  .lead h3 { font-size: 38px; line-height: 1.08; letter-spacing: -0.022em; font-variation-settings: "opsz" 72; }
+  .story p { margin-bottom: 1em; }
+  .story p:last-child { margin-bottom: 0; }
+  .lead > p:first-of-type::first-letter { float: left; font-size: 4.4em; line-height: .8; font-weight: 500; margin: .07em .08em 0 0; font-variation-settings: "opsz" 72; }
+  figure { margin: 0 0 20px; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--paper-2); }
+  figcaption { margin-top: 8px; font: 12.5px/1.45 var(--sans); color: var(--muted); }
+  .sources { font: 12.5px/1.4 var(--sans); color: var(--muted); }
+  .sources a { text-decoration-color: var(--rule); }
+  .colophon { margin: 64px 0 56px; padding-top: 28px; border-top: 1px solid var(--ink); text-align: center; }
+  .colophon .wordmark { font-size: 34px; font-weight: 560; letter-spacing: -0.03em; line-height: 1.1; }
+  .colophon p { font-style: italic; color: var(--ink-2); font-size: 16px; margin-top: 6px; }
+  .colophon .meta { font: 12.5px/1.5 var(--sans); font-style: normal; color: var(--muted); margin-top: 14px; }
+  @media (max-width: 600px) { body { font-size: 18px; padding: 0 18px; } .masthead h1 { font-size: 52px; } article h2 { font-size: 28px; margin-top: 48px; } .lead h3 { font-size: 30px; } .story h3 { font-size: 22px; } .in-brief { padding: 14px 16px 6px; } }
 </style>
 </head>
 <body>
-<main class="wrapper">
+<main>
 <article>
-  <header class="header">
-    <p class="weather-bar">LONDON &middot; SATURDAY &middot; 17 OCTOBER 2026 &middot; MORNING EDITION</p>
-    <h1>The Fold</h1>
-    <p class="tagline">Your Morning Briefing from the UK &amp; the World</p>
-    <p class="dateline"><time datetime="2026-10-17T05:30:00+01:00">17/10/26 &middot; 05:30 BST &middot; London</time></p>
+  <header class="masthead">
+    <p class="date">Saturday 17 October 2026 &middot; London</p>
+    <h1><span class="the">The</span> Fold</h1>
+    <p class="tagline">Your morning briefing from the UK &amp; the world</p>
   </header>
 
-  <h2 class="section-heading">News</h2>
+  <section class="in-brief">
+    <p class="label">In this edition</p>
+    <ul>
+      <li>Brazil&rsquo;s Amazon clearance falls to its lowest level since records began in 1988, nine days before the presidential runoff.</li>
+      <li>London&rsquo;s assembly wants the power to limit robotaxis as Uber and Wayve trials grow.</li>
+      <li>British food and drink exports to the EU are down by more than a third.</li>
+      <li>Apple tightens App Store review, and its first folding iPhone sells out into next year.</li>
+      <li>Manchester City will appeal after being found guilty on every charge.</li>
+    </ul>
+  </section>
 
-  <section class="lead">
+  <h2>News</h2>
+
+  <section class="story lead">
     <h3>Amazon clearance falls to its lowest level in 38 years</h3>
     <figure>
       <img src="https://i.guim.co.uk/img/media/1ab732d5e231b07fef02c8b733fbf39933a3f591/420_0_4200_3360/master/4200.jpg?width=1200&amp;dpr=1&amp;s=none&amp;crop=none" alt="A cleared area beside standing rainforest in the Brazilian Amazon" width="700" height="560">
@@ -85,7 +113,7 @@
     <p>The wider duty would cover social media, gaming services and chatbots. Children would have to be protected from material and design choices that encourage eating disorders, misogyny or exposure to pornography; adults would receive a narrower protection against illegal and seriously harmful content. Breaches could bring fines of A$100m, about &pound;52m. The government&rsquo;s existing ban on social media for children has struggled in practice, and surveys suggest most young users who were online before it remain there. The new approach shifts attention from proving a user&rsquo;s age to changing the machinery presented to everyone. Nearly half of Australians say they would turn recommendations off, although two-thirds of Gen Z respondents would keep them. Choice alone will not repair every harm. It can still make endless optimisation for attention something a person actively accepts. <span class="sources">(<a href="https://www.bbc.co.uk/news/articles/cwr7y8er1n8vo">BBC</a>)</span></p>
   </section>
 
-  <h2 class="section-heading">Economy</h2>
+  <h2>Economy</h2>
 
   <section class="story">
     <h3>Britain&rsquo;s food exporters have lost more than a third of their EU trade</h3>
@@ -107,7 +135,7 @@
     <p>Chinese brands are becoming harder to treat as a distant concern. BYD&rsquo;s UK sales rose 78% year on year in September, Chery&rsquo;s rose 660% and Changan&rsquo;s by more than 3,000%. The Franco-German proposal would let countries that were inside the single market on 1 January 2020 opt into the Industrial Accelerator Act if they accept dynamic alignment on investment conditions and relevant trade measures. European lawmakers have tabled 5,100 amendments, and final rules are expected near the end of this year or early 2027. Quotas could be introduced within months under World Trade Organization safeguards; formal anti-subsidy tariffs would require a longer investigation. Britain therefore has time to bargain, but the basic choice is already visible: preserve a permissive market for cheaper imports or secure a more protected place inside Europe&rsquo;s manufacturing system. <span class="sources">(<a href="https://www.theguardian.com/politics/2026/oct/16/uk-chinese-electric-vehicle-ev-tariffs-eu-made-in-europe-scheme">Guardian</a>)</span></p>
   </section>
 
-  <h2 class="section-heading">Technology</h2>
+  <h2>Technology</h2>
 
   <section class="story">
     <h3>Apple tightens the gate after harmful apps learned how to slip through</h3>
@@ -135,7 +163,7 @@
     <p>Remedy, meanwhile, has reached one million sales of <em>Control Resonant</em> in three weeks, the fastest start in the Finnish studio&rsquo;s history. <em>Alan Wake 2</em>, the previous record holder, needed two months to reach the same point. The result came despite the digital release being cracked and pirated shortly after launch; physical editions have only just gone on sale, leaving room for the total to grow. Remedy&rsquo;s games have often earned critical admiration while selling more slowly than their budgets would prefer. A million copies this early gives the studio a stronger commercial base for its connected world of <em>Control</em> and <em>Alan Wake</em>, and shows that distinctive single-player games can still expand their audience without sanding away the strangeness that made people notice them. <span class="sources">(<a href="https://www.ign.com/articles/remedy-boss-reacts-after-control-resonant-sells-1-million-copies-becoming-studios-fastest-selling-game">IGN</a>)</span></p>
   </section>
 
-  <h2 class="section-heading">Sports</h2>
+  <h2>Sports</h2>
 
   <section class="story">
     <h3>Manchester City&rsquo;s appeal has a high legal bar to clear</h3>
@@ -152,10 +180,10 @@
     <p>Arsenal are considering up to 60 redundancies after a structural review begun by Boston Consulting Group before the end of last season. Catering and travel are among the departments affected, while the men&rsquo;s and women&rsquo;s first-team coaching and performance staff, academy, community operation, foundation and site security are exempt. The club hopes to redeploy some employees and reduce the final number of departures. Scrutiny has intensified because the review follows Arsenal&rsquo;s Premier League title, a rise in annual operating costs from &pound;148m to &pound;201m and Mikel Arteta&rsquo;s new contract worth more than &pound;20m a year. Arteta described the process as part of improving the organisation, then left the detail to executives. Success has given Arsenal more income and ambition; it has also made the distinction between investment on the pitch and savings behind it much harder for the club to explain. <span class="sources">(<a href="https://www.theguardian.com/football/2026/oct/16/mikel-arteta-defends-job-cuts-at-arsenal-to-help-club-evolve-and-create-success">Guardian</a>)</span></p>
   </section>
 
-  <footer class="footer">
-    <strong>The Fold</strong>
-    <p>A daily newsletter for Londoners who want<br>the full picture in one place.</p>
-    <p>Inspired by Brazil's Meio &middot; Saturday, 17 October 2026</p>
+  <footer class="colophon">
+    <p class="wordmark">The Fold</p>
+    <p>A daily briefing for Londoners who want the full picture in one place.</p>
+    <p class="meta">Inspired by Brazil&rsquo;s Meio &middot; Saturday, 17 October 2026 &middot; <a href="https://leonardoresston.github.io/thefold/">leonardoresston.github.io/thefold</a></p>
   </footer>
 </article>
 </main>

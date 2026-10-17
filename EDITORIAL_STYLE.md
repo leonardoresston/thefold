@@ -44,7 +44,14 @@ Prefer direct declarative news sentences:
 - Do not force every story into the standing sections or include a section merely to complete a template.
 - Use only the broad headings that genuinely help the reader navigate that day's edition. Prefer 2–4 sections in total, drawn from News, Economy, Technology, Culture, Sports, Lifestyle, and Gaming.
 - It is fine to place a related technology, gaming, culture, or lifestyle item after another without introducing a new heading for a single story.
-- For sports, focus only on the configured teams and leagues: World Cup, Champions League, Premier League, and Sao Paulo FC. If there is no relevant match or significant news, omit sports entirely.
+- For sports, focus only on the configured teams and leagues: World Cup, Champions League, Premier League, Arsenal FC, and Sao Paulo FC. If there is no relevant match or significant news, omit sports entirely.
+
+## Opening and Design
+
+- Build the edition from `TEMPLATE.html`; it carries The Fold's visual identity. Do not restyle an edition or copy CSS from an older one.
+- Open with "In this edition": 4–6 one-line items, one for each major story, in the order the stories appear. Write each item as a plain factual sentence in The Fold's voice, with no links and no source credits.
+- Mark the first story of the edition as the lead (`class="story lead"`); it carries the larger headline and the drop cap. Every other story uses `class="story"`.
+- Give the lead an image. Add images to other stories only for the main news, using the source's own image with its credit in the caption.
 
 ## Economy
 
@@ -63,4 +70,4 @@ Prefer direct declarative news sentences:
 
 ## Editorial Model
 
-Use Canal Meio's latest edition as inspiration for rhythm and sourcing: report the news directly in short paragraphs, then credit sources in linked parentheses. Keep The Fold's existing design and archive workflow.
+Use Canal Meio's latest edition as inspiration for rhythm and sourcing: report the news directly in short paragraphs, then credit sources in linked parentheses. Keep The Fold's design (`TEMPLATE.html`) and archive workflow.

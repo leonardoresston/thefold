@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  THE FOLD — EDITION TEMPLATE (design 2026-10)
+  Build every edition from this file. Do not copy the previous edition's markup or CSS.
+  - Replace every {{PLACEHOLDER}}. Delete these comments' instructions only if you like; HTML comments are ignored by readers.
+  - Copy the <style> block exactly as it is. Do not edit it per edition.
+  - Keep the fold-template meta tag: scripts/check_edition.py uses it to confirm the current design.
+  - Check with: python3 scripts/check_edition.py index.html
+-->
+<meta name="fold-template" content="2026-10">
+<title>The Fold &mdash; {{YYYY-MM-DD}}</title>
+<meta name="author" content="The Fold">
+<meta name="publication_date" content="{{YYYY-MM-DD}}">
+<meta name="description" content="The Fold morning briefing for {{D Month YYYY}}: {{one-sentence summary of the main stories}}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Fold">
+<meta property="og:title" content="The Fold — {{YYYY-MM-DD}}">
+<meta property="og:description" content="{{one-sentence summary of the main stories}}">
+<meta property="og:url" content="https://leonardoresston.github.io/thefold/archive/{{YYYY}}/{{MM-DD}}.html">
+<meta property="og:image" content="{{absolute https URL of the lead story image}}">
+<meta property="article:author" content="The Fold">
+<meta property="article:published_time" content="{{YYYY-MM-DD}}T05:30:00{{+01:00 during BST, +00:00 during GMT}}">
+<link rel="canonical" href="https://leonardoresston.github.io/thefold/archive/{{YYYY}}/{{MM-DD}}.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #FBF8F3; --paper-2: #F3EEE5; --ink: #171614; --ink-2: #3B3833; --muted: #736D65; --rule: #E3DCD1; --accent: #9C2A22; --serif: "Newsreader", "Iowan Old Style", Georgia, serif; --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root { --paper: #141312; --paper-2: #1D1C1A; --ink: #EEE9E1; --ink-2: #CFC9BF; --muted: #9A938A; --rule: #33302C; --accent: #E07A68; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font: 19px/1.62 var(--serif); font-optical-sizing: auto; -webkit-font-smoothing: antialiased; padding: 0 22px; }
+  main { max-width: 660px; margin: 0 auto; }
+  a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  h1, h2, h3 { font-weight: 500; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .masthead { text-align: center; padding: 40px 0 22px; border-bottom: 1px solid var(--ink); }
+  .masthead .date { font: 500 11.5px/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .masthead h1 { font-size: 72px; font-weight: 560; line-height: 1; letter-spacing: -0.035em; margin: 12px 0 10px; font-variation-settings: "opsz" 72; }
+  .masthead h1 .the { font-weight: 300; font-style: italic; font-size: .5em; vertical-align: .62em; letter-spacing: -0.01em; margin-right: -0.14em; }
+  .masthead .tagline { font-style: italic; color: var(--ink-2); font-size: 18px; }
+  .in-brief { margin: 30px 0 0; padding: 18px 22px 10px; background: var(--paper-2); border-radius: 3px; }
+  .in-brief .label { font: 600 11.5px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .in-brief ul { list-style: none; }
+  .in-brief li { position: relative; padding: 10px 0 10px 20px; border-top: 1px solid var(--rule); font-size: 17px; line-height: 1.45; }
+  .in-brief li:first-child { border-top: 0; }
+  .in-brief li::before { content: ""; position: absolute; left: 1px; top: 1.05em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  article h2 { font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; margin: 60px 0 0; padding-top: 14px; border-top: 2px solid var(--ink); }
+  .story { margin-top: 34px; }
+  .story h3 { font-size: 25px; line-height: 1.18; letter-spacing: -0.012em; margin-bottom: 14px; }
+  .lead h3 { font-size: 38px; line-height: 1.08; letter-spacing: -0.022em; font-variation-settings: "opsz" 72; }
+  .story p { margin-bottom: 1em; }
+  .story p:last-child { margin-bottom: 0; }
+  .lead > p:first-of-type::first-letter { float: left; font-size: 4.4em; line-height: .8; font-weight: 500; margin: .07em .08em 0 0; font-variation-settings: "opsz" 72; }
+  figure { margin: 0 0 20px; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--paper-2); }
+  figcaption { margin-top: 8px; font: 12.5px/1.45 var(--sans); color: var(--muted); }
+  .sources { font: 12.5px/1.4 var(--sans); color: var(--muted); }
+  .sources a { text-decoration-color: var(--rule); }
+  .colophon { margin: 64px 0 56px; padding-top: 28px; border-top: 1px solid var(--ink); text-align: center; }
+  .colophon .wordmark { font-size: 34px; font-weight: 560; letter-spacing: -0.03em; line-height: 1.1; }
+  .colophon p { font-style: italic; color: var(--ink-2); font-size: 16px; margin-top: 6px; }
+  .colophon .meta { font: 12.5px/1.5 var(--sans); font-style: normal; color: var(--muted); margin-top: 14px; }
+  @media (max-width: 600px) { body { font-size: 18px; padding: 0 18px; } .masthead h1 { font-size: 52px; } article h2 { font-size: 28px; margin-top: 48px; } .lead h3 { font-size: 30px; } .story h3 { font-size: 22px; } .in-brief { padding: 14px 16px 6px; } }
+</style>
+</head>
+<body>
+<main>
+<article>
+  <header class="masthead">
+    <p class="date">{{Weekday}} {{D Month YYYY}} &middot; London</p>
+    <h1><span class="the">The</span> Fold</h1>
+    <p class="tagline">Your morning briefing from the UK &amp; the world</p>
+  </header>
+
+  <!-- In brief: 4–6 one-line items, one per major story, in the order they appear. Plain facts, no links, no heading element. -->
+  <section class="in-brief">
+    <p class="label">In this edition</p>
+    <ul>
+      <li>{{One-line summary of the lead story}}</li>
+      <li>{{One-line summary of another major story}}</li>
+    </ul>
+  </section>
+
+  <!-- 2–4 <h2> headings in total, chosen from: News, Economy, Technology, Culture, Sports, Lifestyle, Gaming. -->
+  <h2>{{Section}}</h2>
+
+  <!-- The first story of the edition is the lead: class="story lead". It gets the larger headline and the drop cap. -->
+  <section class="story lead">
+    <h3>{{Lead headline}}</h3>
+    <figure>
+      <img src="{{absolute https image URL}}" alt="{{what the image shows}}" width="{{w}}" height="{{h}}">
+      <figcaption>{{Caption}}. Photograph: {{credit}}.</figcaption>
+    </figure>
+    <p>{{Paragraph}} <span class="sources">(<a href="{{https URL}}">{{Source}}</a>)</span></p>
+    <p>{{Paragraph}} <span class="sources">(<a href="{{https URL}}">{{Source}}</a>, <a href="{{https URL}}">{{Source}}</a>)</span></p>
+  </section>
+
+  <!-- Every other story: class="story". A <figure> is optional; use one for the main news only. -->
+  <section class="story">
+    <h3>{{Headline}}</h3>
+    <p>{{Paragraph}} <span class="sources">(<a href="{{https URL}}">{{Source}}</a>)</span></p>
+  </section>
+
+  <footer class="colophon">
+    <p class="wordmark">The Fold</p>
+    <p>A daily briefing for Londoners who want the full picture in one place.</p>
+    <p class="meta">Inspired by Brazil&rsquo;s Meio &middot; {{Weekday}}, {{D Month YYYY}} &middot; <a href="https://leonardoresston.github.io/thefold/">leonardoresston.github.io/thefold</a></p>
+  </footer>
+</article>
+</main>
+</body>
+</html>
