@@ -58,15 +58,15 @@ Prefer direct declarative news sentences:
 - Cover meaningful economic and business news when it earns a place in the edition.
 - Do not include a recurring market check, price grid, or routine updates for BTC, BRL, VWRP, currencies, cryptoassets, or funds.
 
-## Matter Import
+## Reader Import
 
-- Produce clean, self-contained HTML that imports well into Matter's article reader.
+- Produce clean, self-contained HTML that imports well into RSS readers (Feedbin/Feed) and article readers.
 - Use one `<main>` containing one `<article>`, with a single `<h1>` title followed by a clear hierarchy of `<h2>` and `<h3>` headings.
 - Keep the edition's reading order meaningful without CSS. Put story text in ordinary `<p>` elements and source credits at the end of the relevant paragraph.
 - Use absolute `https://` URLs for the canonical page, source links, and any images.
 - Include a descriptive `<title>`, canonical link, author, publication date, description, and Open Graph article metadata in `<head>`.
 - Avoid JavaScript, tables, multi-column layouts, price cards, decorative text that interrupts extraction, and essential information supplied only through CSS.
-- Keep inline CSS modest and mobile-friendly; Matter should still extract a complete, readable article if it ignores the styling.
+- Keep inline CSS modest and mobile-friendly; a reader should still extract a complete, readable article if it ignores the styling.
 
 ## Editorial Model
 
