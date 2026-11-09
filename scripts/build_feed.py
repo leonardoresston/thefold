@@ -4,7 +4,7 @@
 Usage: python3 scripts/build_feed.py
 
 Writes feed.xml at the repo root with the 30 newest editions in archive/,
-newest first. Each item's guid is its permanent archive URL, so rebuilding
+newest first; the newest FULL_ITEMS carry the full HTML. Each item's guid is its permanent archive URL, so rebuilding
 never creates duplicates in readers.
 """
 import html
@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE_URL = "https://leonardoresston.github.io/thefold/"
 LONDON = ZoneInfo("Europe/London")
 MAX_ITEMS = 30
+FULL_ITEMS = 3  # newest editions that carry the full HTML; older ones carry a summary and link
 
 
 def editions():
@@ -44,23 +45,23 @@ def pub_date(day):
     return format_datetime(datetime.combine(day, time(4, 0), LONDON).astimezone(timezone.utc), usegmt=True)
 
 
-def item(day, path):
+def item(day, path, full=True):
     doc = path.read_text(encoding="utf-8")
     url = f"{BASE_URL}archive/{day:%Y}/{day:%m-%d}.html"
     summary = meta(doc, "description") or meta(doc, "og:description")
+    encoded = f"      <content:encoded><![CDATA[{body(doc)}]]></content:encoded>\n" if full else ""
     return f"""    <item>
       <title>The Fold — {day:%Y-%m-%d}</title>
       <link>{url}</link>
       <guid isPermaLink="true">{url}</guid>
       <pubDate>{pub_date(day)}</pubDate>
       <description>{html.escape(summary, quote=False)}</description>
-      <content:encoded><![CDATA[{body(doc)}]]></content:encoded>
-    </item>"""
+{encoded}    </item>"""
 
 
 def main():
     eds = editions()
-    items = "\n".join(item(d, p) for d, p in eds)
+    items = "\n".join(item(d, p, i < FULL_ITEMS) for i, (d, p) in enumerate(eds))
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
